@@ -1,0 +1,214 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="es-419">
+<head dir="ltr">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"d2285414d1",applicationID:"432968216"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(c(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(5),c=e(6),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,n){s[n]=i(p+n,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(l+"tracer",[u.now(),e,t],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&d("lcp",[t[t.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var n=Math.round(e.timeStamp),t={type:e.type};n<=p.now()?t.fid=p.now()-n:n>p.offset&&n<=Date.now()?(n-=p.offset,t.fid=p.now()-n):n=p.now(),g=!0,d("timing",["fi",n,t])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(4),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e){function n(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,n,!1)}n.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],5:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],6:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],7:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function t(t,r,i,o){if(!p.aborted||o){e&&e(t,r,i);for(var a=n(i),c=v(t),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[t]];return d&&d.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(t)}function y(e,n){u(e,function(e,t){n=n||"feature",w[t]=n,n in s||(s[n]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(5),s={},d={},p=n.exports=i();p.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(w,function(n,t){e[n]||(e[n]=t)});var t=a();f("mark",["onload",t+E.offset],null,"api"),f("timing",["load",t]);var r=l.createElement("script");r.src="https://"+e.agent,n.parentNode.insertBefore(r,n)}}function i(){"complete"===l.readyState&&o()}function o(){f("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-E.offset}var c=(new Date).getTime(),f=e("handle"),u=e(5),s=e("ee"),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,y=g&&g.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var h=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1177.min.js"},b=g&&y&&y[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:c,now:a,origin:h,features:{},xhrWrappable:b,userAgent:d};e(1),e(2),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),f("mark",["firstbyte",c],null,"api");var x=0,O=e(7)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(6),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof t?t(r,a):t||{}}catch(u){p([u,"",[r,a,i],c])}s(n+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(n+"err",[r,a,d],c),d}finally{s(n+"end",[r,a,f],c)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<n.length;f++)c=n[f],a=e[c],r(a)||(e[c]=t(a,u?c+i:i,o,c))}function s(t,r,i){if(!f||n){var o=f;f=!0;try{e.emit(t,r,i,n)}catch(a){p([a,t,r,i])}f=o}}function d(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){p([r])}for(var i in e)c.call(e,i)&&(n[i]=e[i]);return n}function p(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":3,"licenseKey":"d2285414d1","agent":"","transactionName":"YVFaYktUChEHBkVbWVgbfkNXVhALCQseXltFGlxcWFsDDQcVQUEYVVFKQlBTDQEHEVRBGEBdXUFKGxMHBBNYV0EMRl1YXVAWPQUAQ0ZpVE1nQ0xcAA==","atts":"TRZNFANORhADFERXRUJrUkFNagcNCQ5YVxQMFlZZTRgWBxcQVEFCU1AaGhtHARMTAEJGaUNHXURmVAMHCBETCBR7W0JfVVkFTVNLARIebgUJDRl5DQwTHRFKDgBrDgIQFSUSFglUZVNUf1FCFgBXVUhWBxIefXxse3UZRA4PDlQScVNXU1kQFScKFApcVxkOBRYGFwFUVlJLAAEOFmdZUFhHDU1TVgYcBQAWFBRMRgEQOQxVEAwUeldYXBdIQBQAQEdTRUBnV0xBDD0SHEFXFAwWTVhYQBAKAwtFW1VXQF1SG0gZ","applicationID":"432968216","errorBeacon":"bam.nr-data.net","applicationTime":203}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Certificado CognitiveClass DA0101EN | Cognitive Class</title>
+
+    
+  
+
+    <link href="/static/bdu-portal/css/certificates-style.ed1ab39c41cc.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+
+<body class="layout-accomplishment view-valid-accomplishment ltr certificate certificate-honor" data-view="valid-accomplishment">
+
+    <div class="wrapper-view" dir="ltr">
+
+        
+
+
+<div class="wrapper-header">
+
+    <header class="header-app" role="banner">
+        <h1 class="header-app-title">
+            <a class="logo" href="https://courses.cognitiveclass.ai">
+                <img class="logo-img" src="https://cognitiveclass.ai/wp-content/themes/bdu3.0/static/images/cc-logo.png" alt="Inicio de Cognitive Class" />
+            </a>
+            <span class="sr-only">Certificados de validación</span>
+        </h1>
+    </header>
+
+</div>
+
+
+        <hr class="divider sr-only">
+
+        
+
+
+
+
+<div class="wrapper-introduction">
+    <section class="introduction">
+        <h2 class="introduction-copy hd-2 emphasized">
+            Cognitive Class reconoce el siguiente logro al estudiante
+        </h2>
+    </section>
+</div>
+
+
+
+
+
+
+
+
+<main class="accomplishment accomplishment-main">
+
+    <div class="wrapper-accomplishment-rendering">
+        <div class="accomplishment-rendering" style="padding: 10px;">
+            <div class="accomplishment-certificate">
+                <span class="deco-corner deco-corner-tl"></span>
+                <span class="deco-corner deco-corner-tr"></span>
+                <span class="deco-corner deco-corner-bl"></span>
+                <span class="deco-corner deco-corner-br"></span>
+
+                <div class="wrapper">
+                    <div class="accomplishment-org" style="padding: 20px;margin-bottom: -30px;position: relative;top: 5px;">
+                        <a href="https://cognitiveclass.ai"><img class="organization-logo" alt="Organization Logo" src="https://cognitiveclass.ai/wp-content/themes/bdu3.0/static/images/cc-logo.png" /></a>
+                    </div>
+
+                    <div id="qrcode" style="padding: 10px;margin-bottom: 5px;top: 0px;"></div>
+                </div>
+
+                <div class="background-tint" style="background-color: rgba(224, 224, 224, 0.5);">
+                  <div class="wrapper-statement-and-signatories">
+                      <div class="accomplishment-statement" style="padding-bottom: 0;border-bottom: 0;margin-bottom: 0;">
+                          <p class="accomplishment-statement-lead">
+                              <span class="accomplishment-intro" style="color: #4e4e4e;">This is to certify that</span>
+                              <strong class="accomplishment-recipient hd-1 emphasized" style="margin-top:30px;">Nicolas Contreras</strong>
+                              <span class="accomplishment-summary copy copy-lead">successfully completed and received a passing grade in</span>
+
+                              <span class="accomplishment-course hd-1 emphasized" style="margin-bottom:0;">
+                                  <span class="accomplishment-course-name">Data Analysis with Python</span>
+                              </span>
+                              <span class="accomplishment-course-number-and-org" style="color: #4e4e4e;top: -15px;position: relative;font-size: 1rem;">(DA0101EN, provided by <strong>CognitiveClass</strong>)</span>
+                          </p>
+                          <p class="accomplishment-statement-detail copy copy-lead" style="margin-bottom: 0px;color: #4e4e4e;">A course on <strong style="color: #4e4e4e">cognitiveclass.ai</strong></p>
+                          <p style="color: #4e4e4e;">Powered by <strong>IBM Developer Skills Network.</strong></p>
+                          <p style="margin-bottom:0;color: #4e4e4e;">Issued by</p>
+                          <p><strong style="color: black">Cognitive Class</strong></p>
+                      </div>
+
+
+                      <div class="accomplishment-signatories" style="padding-bottom: 0;border-bottom: 0;margin-bottom: 0;">
+                          <h3 class="accomplishment-signatories-title sr-only">Anotado por</h3>
+
+                          <div class="wrapper-signatories">
+                            <div class="list-signatories">
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="accomplishment-footer" style="margin:20px;">
+                    <div class="accomplishment-date">
+                      <span class="label">Issued on:</span>
+                      <span class="value">12 de septiembre de 2020</span>
+                    </div>
+                    <div class="accomplishment-validation-link">
+                      <span class="label">
+                        Authenticity of this certificate can be validated by going to:
+                      </span>
+                      <span class="value"><a href="https://courses.cognitiveclass.ai/certificates/47b925c3b14c4035a89804e589a0a52a" style="color: #065683;">https://courses.cognitiveclass.ai/certificates/47b925c3b14c4035a89804e589a0a52a</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper-accomplishment-metadata">
+        <div class="accomplishment-metadata">
+            <h2 class="accomplishment-metadata-title hd-6">Más sobre los logros de Nicolas Contreras, </h2>
+
+            <div class="wrapper-metadata">
+                <dl class="metadata accomplishment-recipient">
+                    <dt class="label sr-only">Otorgado a:</dt>
+                    <dd class="value copy copy-meta">
+                        <span class="recipient-img">
+                            <img class="src" src="/static/certificates/images/demo-user-profile.png" alt="Recipient Image">
+                        </span>
+                        <div class="recipient-details">
+                            <h3 class="recipient-name">Nicolas Contreras</h3>
+                            <p class="recipient-username">Nicontreras @ Cognitive Class</p>
+                        </div>
+                    </dd>
+                </dl>
+                <dl class="metadata accomplishment-id">
+                    <dt class="label copy copy-meta">Número de ID del certificado:</dt>
+                    <dd class="value copy copy-base">47b925c3b14c4035a89804e589a0a52a</dd>
+                </dl>
+                <dl class="metadata accomplishment-date">
+                    <dt class="label copy copy-meta">Emitido en:</dt>
+                    <dd class="value copy copy-base">12 de septiembre de 2020</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<script src="/static/bdu-portal/js/vendor/qrcode.min.517b55d3688c.js"></script>
+<script type="text/javascript">
+  new QRCode(document.getElementById("qrcode"), {
+    text: "https://courses.cognitiveclass.ai/certificates/47b925c3b14c4035a89804e589a0a52a",
+    width: 100,
+    height: 100
+  });
+</script>
+
+<div class="wrapper-about">
+    <aside role="complementary" class="about" aria-label=Acerca de los Certificados de edX>
+        
+        
+<section class="about-item about-accomplishments">
+    <h2 class="about-title hd-4">Acerca de los logros en Cognitive Class</h2>
+
+    <div class="about-copy copy copy-meta">
+        <p>Cognitive Class reconoce los logros alcanzados a través de los certificados, los cuales son otorgados por la actividades que los estudiantes de Cognitive Class completan.</p>
+    </div>
+</section>
+
+    </aside>
+</div>
+
+
+        <hr class="divider sr-only">
+
+        
+<div class="wrapper-footer">
+
+  <footer class="footer-app" role="contentinfo" id="company-info">
+    <div class="footer-app-copyright">
+      <p class="copy copy-micro">&copy; 2020 Cognitive Class. Todos los derechos reservados..</p>
+    </div>
+  </footer>
+  
+</div>
+    </div>
+
+    <script type="text/javascript">
+
+    document.getElementById("action-print-view").addEventListener("click", printView);
+
+    function printView(event) {
+       event.preventDefault();
+       window.print();
+    }
+</script>
+
+</body>
+</html>
